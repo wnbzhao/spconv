@@ -14,6 +14,8 @@ else()
     set(CUDA_LIB_PATH_HINTS "${CUDA_TOOLKIT_ROOT_DIR}/lib64")
 endif()
 
+include_directories("/usr/local/include/boost/")
+
 find_library(CUDA_CUDART NAMES cudart HINTS ${CUDA_LIB_PATH_HINTS})
 find_library(CUDA_CUBLAS NAMES cublas HINTS ${CUDA_LIB_PATH_HINTS})
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
